@@ -14,4 +14,4 @@ const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words);
 assertEqual(words.length, 3);
 
-console.log(words.slice(1));
+console.log(tail(words));

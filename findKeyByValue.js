@@ -6,11 +6,11 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const findKeyByValue = function(object, value) {
-  const keys = Object.keys(object);
-  for (i = 0; i < keys.length; i++) {
-    if (value === object[keys[i]]) {
-      return keys[i];
+const findKeyByValue = function(object, value) { 
+  const keys = Object.keys(object); // variable that takes in all keys of object ex. bestTVShowsByGenre
+  for (i = 0; i < keys.length; i++) { // loops through said object
+    if (value === object[keys[i]]) { // if the value ex. "drama" == the key index..
+      return keys[i]; // return that key index
     }
   }
 };

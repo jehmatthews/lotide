@@ -21,22 +21,22 @@ const eqArrays = function(array1, array2) {
 };
 
 const eqObjects = function(object1, object2) {
-  const keys1 = Object.keys(object1);
-  const keys2 = Object.keys(object2);
-  if (keys1.length !== keys2.length) {
+  const keys1 = Object.keys(object1); // taking the keys from object1 (const ab)
+  const keys2 = Object.keys(object2); // taking the keys from object2 (const ba)
+  if (keys1.length !== keys2.length) { // if said objects length arent equal return false
     return false;
-  }
-  for (let key of keys1) {
-    if (Array.isArray(object1[key]) && (Array.isArray(object2[key]))) {
-      if (!eqArrays(object1[key], object2[key])) {
+  } // if object lengths are equal move to next if
+  for (let key of keys1) { // looping through object1
+    if (Array.isArray(object1[key]) && (Array.isArray(object2[key]))) { //if object1 is an array, take key and object2, do the same 
+      if (!eqArrays(object1[key], object2[key])) { // if eqArrays retuns false move to else if
         return false;
       }
     }
-    else if (object1[key] !== object2[key]) {
+    else if (object1[key] !== object2[key]) { // if object key1 and key2 dont equal each other return false
       return false;
     }
   }
-  return true;
+  return true; // other wise return true
 };
 
 const ab = { a: "1", b: "2" };

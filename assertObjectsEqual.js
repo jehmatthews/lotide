@@ -27,3 +27,4 @@ const assertObjectsEqual = function (actual, expected) {
 };
 
 assertObjectsEqual({a: "1", b: "2"}, {a: "1", b: "2"});
+assertObjectsEqual({c: "3", d:"9"}, {e:"3", f: "9"});

@@ -19,14 +19,16 @@ const eqArrays = function(array1, array2) {
 };
 
 const flatten = function(array) {
-  let result = [];
-  for (let i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) {
-      result = result.concat(array[i]);
+  let result = []; // set result to empty array to take in result
+  for (let i = 0; i < array.length; i++) { // loop through length of array
+    if (Array.isArray(array[i])) { // if array found, return the index of said array
+      result = result.concat(array[i]); // concat all arrays inside arrays index
     } else {
-      result.push(array[i]);
+      result.push(array[i]); // push elements to result array
     }
   }
   return result;
 };
 console.log(flatten([1, 2, [3, 4], 5, [6]]));
+
+module.exports = flatten;

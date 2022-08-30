@@ -8,13 +8,13 @@ const assertEqual = function(actual, expected) {
 
 const countOnly = function(allItems, itemsToCount) {
   const results = {};
-  for (const item of allItems) {
-    console.log(item);
-    if (itemsToCount[item]) {
+  for (const item of allItems) { // looping through items of array
+    console.log(item); 
+    if (itemsToCount[item]) { // if items equal given number
       if (results[item]) {
-        results[item] += 1
+        results[item] += 1 // put those items into results if theres one or more
       } else {
-        results[item] = 1;
+        results[item] = 1; // item adds to result if only 1
       }
     }
   }
@@ -39,3 +39,5 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
+
+module.exports = countOnly;

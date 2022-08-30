@@ -20,17 +20,17 @@ const assertArraysEqual = function (array1, array2) {
 
 const without = function (source, itemsToRemove) {
   let newArray = [];
-  for (let i = 0; i < source.length; i++) {
-    let push = true;
-    for (let x = 0; x < itemsToRemove.length; x++) {
-      if (source[i] !== itemsToRemove[x]) {
-        push = true;
+  for (let i = 0; i < source.length; i++) { // this will loop through source given [1, 2, 3]
+    let push = true; 
+    for (let x = 0; x < itemsToRemove.length; x++) { // loops through itemsToRemove
+      if (source[i] !== itemsToRemove[x]) { // if index in source does not equal index in iTR..
+        push = true; 
       } else {
         push = false;
       }
     }
     if (push) {
-      newArray.push(source[i]);
+      newArray.push(source[i]); // will return the source index matchin iTR index into new array
     }
   }
   console.log(newArray);
@@ -44,3 +44,5 @@ const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+
+module.exports = without;

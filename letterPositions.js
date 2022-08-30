@@ -28,7 +28,7 @@ const letterPositions = function(sentence) {
       if (!results[character]) { // if character ex."h", is not found, next line
         results[character] = [i]; // add the "h" to array in object "results"
       } else {
-        results[character].push(i) // if character is found, ex."l", add another index number to "l" array ex [2] -> [2, 3]
+        results[character].push(i) // if character is found, ex.".l", add another index number to "l" array ex [2] -> [2, 3]
       }
     } 
   }
@@ -37,3 +37,5 @@ const letterPositions = function(sentence) {
 
 console.log(letterPositions("hello"));
 assertArraysEqual(letterPositions("hello").l, [2, 3]);
+
+module.exports = letterPositions;

@@ -21,10 +21,10 @@ const assertArraysEqual = function (array1, array2) {
 const data = ["may", "the", "force", "be", "with", "you"];
 
 const takeUntil = function(array, callback) {
-  const results = [];
-  for (let i = 0; i < array.length; i++) {
-    if (callback(array[i]) === true) {
-      break;
+  const results = []; // results go into empty array
+  for (let i = 0; i < array.length; i++) { // looping through array length
+    if (callback(array[i]) === true) { // if array[i] in callback === true
+      break; //stop here
     } else { 
       results.push(array[i]);
     }
@@ -32,7 +32,9 @@ const takeUntil = function(array, callback) {
   return results;
 }
 
-const results2 = takeUntil(data, i => i === "be")
+const results2 = takeUntil(data, i => i === "be") // callback is calling for loop to break when it reaches "be"
 console.log(results2);
 
 assertArraysEqual(results2, ["may", "the", "force"]);
+
+module.exports = takeUntil;

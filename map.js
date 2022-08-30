@@ -22,16 +22,18 @@ const assertArraysEqual = function (array1, array2) {
 const words = ["may", "the", "force", "be", "with", "you"];
 
 const map = function(array, callback) {
-const results = [];
-  for (let item of array) {
-    results.push(callback(item));
+const results = []; // results will go in the array
+  for (let item of array) { //looping through items of array
+    results.push(callback(item)); // push the items of array 
   }
   return results;
 };
 
-const results1 = map(words, word => word[0]);
+const results1 = map(words, word => word[0]); // this callback pulls all the [0] index of all items in array
 console.log(results1);
 
 assertArraysEqual(results1, [ 'm', 't', 'f', 'b', 'w', 'y' ]);
 assertArraysEqual(results1, ["g","c","t","m","t"]);
 assertArraysEqual(results1, [ 'm', 't', 'f', 'b', 'w']);
+
+module.exports = map;

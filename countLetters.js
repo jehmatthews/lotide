@@ -7,18 +7,20 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function(word) {
-  const count = {};
+  const count = {}; // count will go in here
 
-  for (let i = 0; i < word.length; i++) {
-    const letter = word[i];
+  for (let i = 0; i < word.length; i++) { // loop through string
+    const letter = word[i]; // this is the number of letters found in loop
 
-    if (!count[letter]) {
-      count[letter] = 1;
+    if (!count[letter]) { // if cant count a letter mor then once
+      count[letter] = 1; // return 1 for that letter
     } else {
-      count[letter]++;
+      count[letter]++; // if letter exists more then once, increment ++
     }
   }
-  return count;
+  return count; 
 };
 
 console.log(countLetters('lighthouse in the house'));
+
+module.exports = countLetters;
